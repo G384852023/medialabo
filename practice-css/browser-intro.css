@@ -18,8 +18,8 @@ h2 {
 	font-family: cursive;
 	color: #3f3faf;
 	background: linear-gradient(.25turn,white, #ffefaf);
+	margin: 5px;
 	
-	padding: 5px;
 }
 
 div#zentai {
@@ -31,7 +31,7 @@ div#zentai {
 }
 
 div#zentai > div {
-	margin-left: 5px;
+	padding: 5px;
 	background-color: #ffefaf;
 }
 
