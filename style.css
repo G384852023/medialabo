@@ -12,3 +12,11 @@ h2 {
 	margin: 5px;
 }
 
+div.zentai{
+    display: flex;
+    flex-direction: column;
+}
+
+div.one{
+    flex: 2;
+}
