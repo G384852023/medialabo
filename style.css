@@ -1,3 +1,9 @@
+body{
+	background: linear-gradient(.25turn,white, aqua);
+}
+
+
+
 h1 {
 	color: orange;
     border-color: royalblue;
@@ -6,11 +12,22 @@ h1 {
 }
 
 h2 {
-	font-family: cursive;
 	color: green;
 	background: lightblue;
 	margin: 5px;
 }
+
+a:link{
+	color:  #3fa4ff;
+}
+
+a:visited {
+	color: purple;
+  }
+  
+a:hover {
+	text-decoration: none;
+  }
 
 div.zentai{
     display: flex;
@@ -19,4 +36,25 @@ div.zentai{
 
 div.one{
     flex: 2;
+	background-color:  #fffec6;
+}
+
+div.two{
+	flex: 2;
+	background-color:  #e6ffc6;
+}
+
+div.three{
+	flex: 2;
+	background-color:  #c6fffe;
+}
+
+div.four{
+	flex: 2;
+	background-color:  #f5c6ff;
+}
+
+div.five{
+	flex: 2;
+	background-color:  #ffc6c6;
 }
