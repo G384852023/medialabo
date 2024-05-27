@@ -23,7 +23,12 @@ function hantei() {
   // 課題3-1における出力先はコンソール
 
   kaisu=kaisu+1;
-  console.log(kaisu+'回目の予想: 4');
+  //console.log(kaisu+'回目の予想: 4'); 
+  
+  let q=document.querySelector('p#result');
+  let p1=document.createElement('p');
+  p1.textContent=kaisu+'回目の予想: '+yoso;
+  q.insertAdjacentElement('beforeend', p1);
 
   if(kaisu<4){
     if(yoso===kotae){
