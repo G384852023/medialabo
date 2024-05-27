@@ -44,9 +44,19 @@ div.insertAdjacentElement('beforeend', hp);
 
 
 // 練習4-4 箇条書き削除プログラム
-let w=document.querySelector('ul#location');
-w.remove();
+let w=document.querySelectorAll('ul#location > li'); 
+for(let i of w){
+	i.remove();
+  }
 
 
 // 練習4-5 箇条書き追加プログラム
+let ul=document.querySelector('ul#location');
+
+
+for(let i of data){
+	let x=document.createElement('li'); 
+	x.textContent=i.name+' ... 緯度:'+i.lat+', 経度:'+i.lng;
+	ul.insertAdjacentElement('beforeend', x);
+}
 
