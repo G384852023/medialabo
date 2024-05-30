@@ -21,7 +21,7 @@ function hantei() {
   //let yoso = 4;
 
   let x=document.querySelector('input[name="kazu"]');
-  let yoso=x.value;
+  let yoso=parseInt(x.value,10);
 
   // 課題3-1: 正解判定する
   // kotae と yoso が一致するかどうか調べて結果を出力
@@ -32,7 +32,7 @@ function hantei() {
   let k=document.querySelector('span#kaisu');
   let a=document.querySelector('span#answer');
   let r=document.querySelector('p#result');
-  k.textContent=kaisu;
+  k.textContent=kaisu+'回目の予想: ';
   a.textContent=yoso;
 
 
