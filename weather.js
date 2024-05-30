@@ -46,7 +46,7 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
-let data2=[
+/*let data2=[
   '緯度: '+data.coord.lon,
   '経度: '+data.coord.lat,
   '天気: '+data.weather[0].description,
@@ -56,12 +56,71 @@ let data2=[
   '風速: '+data.wind.speed,
   '風向: '+data.wind.deg,
   '都市名: '+data.name,
-];
+];*/
 
 let p=document.querySelector('ul');
 
-for(let i of data2){
+/*for(let i of data2){
   let t=document.createElement('li');
   t.textContent=i;
   p.insertAdjacentElement('beforeend', t);
+}*/
+
+
+//以下プロジェクト課題
+let s=document.querySelector('#search');
+s.addEventListener('click', sendRequest);
+
+function sendRequest(){
+  let id=document.querySelectorAll('input[name=place]');
+  let sid;
+  for(let i of id){
+    if(i.checked){
+      sid=i.value
+    }
+  }
+
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/'+sid+'.json';
+    axios.get(url)
+        .then(showResult)
+        .catch(showError)
+        .then(finish);
+}
+
+function showResult(resp){
+  //1回目の検索結果を削除したい
+  /*let w=document.querySelectorAll('ul');
+  for(let i of p){
+    i.remove();
+  }*/
+
+  let data=resp.data;
+  if(typeof data ==='string'){
+    data=JSON.parse(data);
+  }
+
+  let kdata=[
+    '緯度: '+data.coord.lon,
+    '経度: '+data.coord.lat,
+    '天気: '+data.weather[0].description,
+    '最低気温: '+data.main.temp_min,
+    '最高気温: '+data.main.temp_max,
+    '湿度: '+data.main.humidity,
+    '風速: '+data.wind.speed,
+    '風向: '+data.wind.deg,
+    '都市名: '+data.name,
+  ];
+  for(let i of kdata){
+    let t=document.createElement('li');
+    t.textContent=i;
+    p.insertAdjacentElement('beforeend', t);
+  }
+}
+
+function showError(err) {
+  console.log(err);
+}
+
+function finish() {
+  console.log('Ajax 通信が終わりました');
 }
