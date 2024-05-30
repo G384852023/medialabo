@@ -46,12 +46,22 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
-console.log('緯度: '+data.coord.lon);
-console.log('経度: '+data.coord.lat);
-console.log('天気: '+data.weather[0].description);
-console.log('最低気温: '+data.main.temp_min);
-console.log('最高気温: '+data.main.temp_max);
-console.log('湿度: '+data.main.humidity);
-console.log('風速: '+data.wind.speed);
-console.log('風向: '+data.wind.deg);
-console.log('都市名: '+data.name);
+let data2=[
+  '緯度: '+data.coord.lon,
+  '経度: '+data.coord.lat,
+  '天気: '+data.weather[0].description,
+  '最低気温: '+data.main.temp_min,
+  '最高気温: '+data.main.temp_max,
+  '湿度: '+data.main.humidity,
+  '風速: '+data.wind.speed,
+  '風向: '+data.wind.deg,
+  '都市名: '+data.name,
+];
+
+let p=document.querySelector('ul');
+
+for(let i of data2){
+  let t=document.createElement('li');
+  t.textContent=i;
+  p.insertAdjacentElement('beforeend', t);
+}
