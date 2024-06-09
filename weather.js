@@ -47,6 +47,12 @@ let data = {
 
 ////////// 課題3-2 ここからプログラムを書こう
 let ul=document.querySelector('ul');
+let div=document.querySelector('div#result');
+let ti=document.createElement('img');
+let tp=document.createElement('p');
+tp.insertAdjacentElement('beforeend', ti);
+div.insertAdjacentElement('beforeend', tp);
+
 let s=document.querySelector('#search');
 s.addEventListener('click', sendRequest);
 
@@ -93,6 +99,22 @@ function showResult(resp){
     let t=document.createElement('li');
     t.textContent=i;
     ul.insertAdjacentElement('beforeend', t);
+  }
+  
+  if(data.main.humidity===34){
+    ti.setAttribute('src', 'hare.png');
+  }
+
+  else if(data.main.humidity===93){
+    ti.setAttribute('src', 'umbrella.png');
+  }
+
+  else if(data.main.humidity===89){
+    ti.setAttribute('src', 'kiri.png');
+  }
+
+  else{
+    ti.setAttribute('src', 'kumori.png');
   }
 }
 
