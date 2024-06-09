@@ -46,10 +46,9 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
-let p=document.querySelector('ul');
+let ul=document.querySelector('ul');
 let s=document.querySelector('#search');
 s.addEventListener('click', sendRequest);
-
 
 function sendRequest(){
   let id=document.querySelectorAll('input[name=place]');
@@ -68,11 +67,6 @@ function sendRequest(){
 }
 
 function showResult(resp){
-  //1回目の検索結果を削除したい
-  /*let w=document.querySelectorAll('ul');
-  for(let i of ul){
-    i.remove();
-  }*/
 
   let data=resp.data;
   if(typeof data ==='string'){
@@ -90,10 +84,15 @@ function showResult(resp){
     '風向: '+data.wind.deg,
     '都市名: '+data.name,
   ];
+
+  let w=document.querySelectorAll('ul#ul>li');
+  for(let i of w){
+    i.remove();
+  }
   for(let i of kdata){
     let t=document.createElement('li');
     t.textContent=i;
-    p.insertAdjacentElement('beforeend', t);
+    ul.insertAdjacentElement('beforeend', t);
   }
 }
 
